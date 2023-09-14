@@ -63,3 +63,16 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Xolonium';
+    src: url('/fonts/Xolonium.eot');
+    src: url('/fonts/Xolonium.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Xolonium.woff2') format('woff2'),
+        url('/fonts/Xolonium.woff') format('woff'),
+        url('/fonts/Xolonium.ttf') format('truetype'),
+        url('/fonts/Xolonium.svg#Xolonium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
