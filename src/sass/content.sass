@@ -615,6 +615,10 @@ textarea:-moz-placeholder
       width: 100%
       a 
          width: 120px
+   &__btn 
+      &:hover
+         background: rgb(57, 57, 57)
+         color: white
    .swiper-pagination2
       display: none
    &-arr 
@@ -774,7 +778,7 @@ textarea:-moz-placeholder
             border-radius: 21px
             height: 44px
             img 
-               margin-left: 8px
+               margin-left: 15px
             a 
                display: flex
                align-items: center
@@ -805,12 +809,12 @@ textarea:-moz-placeholder
    &__fig1
       position: absolute
       left: 0
-      top: 0
+      top: 86px
       z-index: -1
    &__fig2 
       position: absolute
-      right: 0
-      top: 15%
+      right: 30px
+      top: 24%
       z-index: -1
    &__fig3 
       position: absolute
@@ -836,8 +840,11 @@ textarea:-moz-placeholder
       width: 168px
       height: 53px
       border-radius: 27px
+      border: 1px solid transparent
       &:hover 
-         color: #393939
+         color: $red
+         border: 1px solid $red
+         background: transparent
    &__block 
       width: 26px
       height: 26px
@@ -857,6 +864,16 @@ textarea:-moz-placeholder
    &__item 
       text-align: center
       width: 21%
+      position: relative
+      &:after 
+         content: ""
+         display: block
+         background: url(/img/next.png) no-repeat
+         position: absolute
+         top: 69px
+         right: -110px
+         width: 129px
+         height: 6px
    &__box 
       justify-content: space-between
       margin-top: 80px
@@ -1073,7 +1090,7 @@ textarea:-moz-placeholder
          color: $red
    &__el 
       align-items: flex-start
-      margin-bottom: 36px
+      margin-bottom: 23px
       img 
          margin-right: 10px
       p 
@@ -1146,7 +1163,7 @@ textarea:-moz-placeholder
       align-items: flex-start
       margin-bottom: 100px
       img 
-         margin-left: 38px
+         margin-left: 30px
       &:last-child
          margin-bottom: 0
    &__left 
@@ -1172,16 +1189,16 @@ textarea:-moz-placeholder
          img 
             order: 1
             margin-left: 0
-            margin-right: 48px
+            margin-right: 30px
          &:nth-child(1)
             position: relative
             top: -10px
          &:nth-child(2)
             position: relative
-            left: 105px
+            left: 87px
             top: 15px
          &:nth-child(3)
-            left: 14px
+            left: -5px
             position: relative
             top: 23px
       .why__content 
@@ -1189,6 +1206,8 @@ textarea:-moz-placeholder
    &__pic 
       position: relative
       top: -11px
+   .sub
+      max-width: 400px
 .map 
    padding: 59px 0 0
    position: relative
@@ -1226,13 +1245,15 @@ textarea:-moz-placeholder
       width: 25%
       z-index: 2
       height: 663px
+.ymaps, #id_169511250033979018965
+   overflow: visible !important
 .ymaps-2-1-79-balloon__close+.ymaps-2-1-79-balloon__content
    width: 349px
    height: auto !important
-   overflow: hidden !important
+   // overflow: hidden !important
    background-color: #ffffff
    margin-right: 0 !important
-   padding: 40px 40px 30px !important
+   padding: 40px 20px 30px !important
    border-radius: 10px !important
 .ymaps-2-1-79-balloon
    box-shadow: 0 32px 32px rgba(161, 161, 161, 0.76) !important
@@ -1270,6 +1291,7 @@ textarea:-moz-placeholder
    &__time
       color: #747474
       font-weight: 300
+      text-transform: uppercase
       font-size: 14px
    &__content
       width: 100%
@@ -1279,6 +1301,7 @@ textarea:-moz-placeholder
       font-size: 28px
       font-weight: 700
       line-height: 38px
+      font-family: 'Formular'
       margin-bottom: 25px
    &__text 
       color: #0f0f0f
@@ -1491,15 +1514,20 @@ textarea:-moz-placeholder
       justify-content: space-between
    &__flex 
       align-items: center
-      margin-bottom: 40px
+      margin-bottom: 30px
       p 
          color: #282828
-         font-size: 35px
-         margin-left: 12px
+         font-size: 40px
+         margin-left: 11px
          font-family: 'Xolonium'
+         position: relative
+         top: -2px
+         span 
+            position: relative
+            top: 1.5px
    &__content 
       width: 100%
-      max-width: 525px
+      max-width: 532px
    &__text 
       color: #282828
       line-height: 27px
@@ -1575,14 +1603,15 @@ textarea:-moz-placeholder
       margin-top: 80px
       h2 
          text-align: center
+         font-size: 35px
       .container 
-         max-width: 1767px
+         max-width: 1803px
    &__line 
       justify-content: space-between
-      margin-top: 60px
+      margin-top: 72px
    &__box 
       transition: 0.5s 
-      width: 11.939%
+      width: 11.739%
       height: 117px
       border-radius: 5px
       background-color: #f1f1f1
@@ -1599,7 +1628,7 @@ textarea:-moz-placeholder
    background: #f8f8f8
    h2 
       text-align: center
-      font-size: 30px
+      font-size: 35px
       line-height: 40px
    .swiper6 
       overflow: hidden 
@@ -1643,7 +1672,7 @@ textarea:-moz-placeholder
    padding: 80px 0
    h2 
       text-align: center
-      font-size: 30px
+      font-size: 35px
       line-height: 40px
    &__box 
       margin-top: 60px
@@ -1764,8 +1793,19 @@ textarea:-moz-placeholder
       font-weight: 500
       font-weight: 500
       margin-left: 50px
-      img 
-         margin-left: 10px
+      .svg
+         margin-left: 2px
+         width: 23px
+         position: relative
+         top: 0px
+         path 
+            fill: $red !important
+      &:hover 
+         .svg 
+            path 
+               fill: white !important
+      &:hover 
+         border: 1px solid $red
    &__flex 
       position: relative
       z-index: 1
@@ -1819,6 +1859,7 @@ textarea:-moz-placeholder
          color: $red !important
    &__box 
       justify-content: space-between
+      max-width: 89%
    .accordeon
       padding: 0
       margin: 0
@@ -1840,7 +1881,7 @@ textarea:-moz-placeholder
          &.active:after 
             background: url(/img/up-arr.png) no-repeat !important
          &:hover 
-            color: $red
+            color: #2e3032
       .accordeon__item
          margin-bottom: 40px
          &:last-child
@@ -1856,7 +1897,7 @@ textarea:-moz-placeholder
       border-radius: 15px
       overflow: hidden
    &__box 
-      margin-top: 60px
+      margin-top: 50px
       align-items: flex-start
       justify-content: space-between
    .cont__info 
@@ -1927,6 +1968,7 @@ textarea:-moz-placeholder
    .swiper9
       overflow: hidden
       margin-top: 70px
+      background-color: #fbfbfb
       .swiper-slide
          display: flex 
          align-items: center
@@ -2268,10 +2310,10 @@ textarea:-moz-placeholder
          background: $red !important
    .pop-arr
       bottom: 20px
-      right: 10px
+      right: 33px
       top: inherit
    .swiper-button-prev-kk
-      right: 55px
+      right: 75px
       left: inherit
       transform: rotate(180deg)
    h1 
@@ -2328,8 +2370,8 @@ textarea:-moz-placeholder
       margin-bottom: 20px
    .custom-checkbox + label::before
       position: absolute
-      top: -6.8px
-      left: -6.4px
+      top: -6.4px
+      left: -5.4px
       height: 53px
       width: 53px
       border-radius: 50%
@@ -2446,4 +2488,9 @@ textarea:-moz-placeholder
       margin-bottom: 25px
       &:last-child
          margin-bottom: 0
-
+.page 
+   .header
+      padding-bottom: 40px
+   h1 
+      font-size: 35px
+      line-height: 46px
