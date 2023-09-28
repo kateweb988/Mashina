@@ -40,12 +40,75 @@ input:-moz-placeholder
    top: 49%
    left: 50%
    transform: translate(-50%, -50%) scale(0)
-   width: 1270px
    height: max-content
    transition: 0.5s all
-   text-align: center
-   background: white
-   padding: 59px 44px 47px
+   border-radius: 10px
+   padding: 50px
+   width: 473px
+   background-color: #ffffff
+.popup, .popup2
+   &__text 
+      text-align: center
+      color: #7d7d7d
+      font-size: 13px
+      line-height: 17px 
+      a 
+         color: $red
+         &:hover 
+            color: #000
+   .tel 
+      margin-bottom: 30px
+   &__btn 
+      border-radius: 30px
+      margin: 22px 0 
+      width: 100%
+      height: 60px
+      font-size: 16px
+      font-weight: 700
+   &__flex 
+      flex-wrap: wrap 
+      justify-content: space-between
+      .custom-checkbox + label
+         color: #7d7d7d
+         white-space: nowrap
+         font-size: 16px
+      .custom-checkbox + label::before
+         border: 1px solid #d2d2d2
+      .calc__item
+         width: 157px
+         margin-bottom: 20px
+      .custom-checkbox:checked + label::before
+         background: url(/img/check.svg) no-repeat center center
+         border: 1px solid $red
+   &__name 
+      font-weight: 500
+      font-size: 16px
+      margin-bottom: 22px
+   &__title 
+      text-align: center
+      margin-bottom: 43px
+      font-size: 25px
+      font-weight: 700
+   &__pic 
+      text-align: center
+      display: block
+      margin: 0 auto 50px
+   &__form 
+      width: 100%
+      input 
+         width: 100%
+         font-size: 16px
+         color: #000
+         padding-bottom: 20px
+         border: none  !important
+         border-bottom: 1px solid #7d7d7d !important
+         margin-bottom: 50px
+         &:focus 
+            border: none  !important
+            border-bottom: 1px solid $red !important
+.popup2
+   .tel 
+      margin-bottom: 10px
 .popup.active, .popup2.active
    transform: translate(-50%, -46%) scale(1)
    transition: 0.5s all
@@ -54,8 +117,8 @@ input:-moz-placeholder
    top: 20px
    right: 20px
    cursor: pointer
-   width: 24px
-   height: 24px
+   width: 15px
+   height: 15px
    fill: white
    z-index: 20
    transition: 0.5s
@@ -621,6 +684,7 @@ textarea:-moz-placeholder
          color: white
    .swiper-pagination2
       display: none
+
    &-arr 
       position: absolute
       top: 57%
@@ -686,6 +750,8 @@ textarea:-moz-placeholder
    position: absolute
    top: -1000px
 .nav 
+   &__new 
+      align-items: center
    &__box 
       justify-content: space-between
       align-items: center
@@ -694,7 +760,11 @@ textarea:-moz-placeholder
    &__text 
       color: #484848
       font-size: 14px
+      position: relative
+      left: -87px
    &__flex 
+      position: relative
+      left: 21px
       align-items: center
    &__block 
       align-items: center
@@ -713,26 +783,41 @@ textarea:-moz-placeholder
    &__right 
       align-items: center
    &__tel 
-      font-weight: 700
-      color: #393939
-      font-size: 20px
-      margin-right: 24px
+      margin-right: 18px
+      align-items: center
+      display: flex
+      p 
+         transition: 0.5s
+         font-weight: 700
+         color: #393939
+         font-size: 20px
+      img 
+         margin-right: 16px
+      &:hover
+         p 
+            color: $red
+         .new__block 
+            border: 1px solid $red
    &__link 
       display: flex
       align-items: center
       justify-content: center
-      width: 36px
-      height: 36px
+      width: 45px
+      height: 45px
       border: 1px solid #e5e5e5
       transition: 0.5s
       border-radius: 50%
+      margin-right: 8px
       &:first-child
-         margin-right: 8px
          padding-left: 2px
+      &:last-child
+         margin-right: 0
       &:nth-child(2)
          padding-right: 2px
       &:hover 
          border: 1px solid $red
+      img 
+         width: 20px
    &__info 
       align-items: center
       margin-left: 54px
@@ -759,12 +844,13 @@ textarea:-moz-placeholder
    &__bottom 
       align-items: center
       margin-top: 38px
+      justify-content: space-between
    &__list 
       align-items: center
       width: 100%
       justify-content: space-between
       max-width: 519px
-      margin-left: 50px
+      margin-left: 0px
       li 
          a 
             color: #484848
@@ -777,6 +863,7 @@ textarea:-moz-placeholder
             background-color: #f5f5f5
             border-radius: 21px
             height: 44px
+            margin-right: -25px
             img 
                margin-left: 15px
             a 
@@ -791,7 +878,7 @@ textarea:-moz-placeholder
    &__call 
       width: 162px
       height: 44px
-      margin-left: auto
+      margin-left: 19px
    &__logo 
       display: block
       img 
@@ -801,10 +888,15 @@ textarea:-moz-placeholder
 .header 
    position: relative
    padding-bottom: 58px
+   &__pic 
+      position: relative
+      left: -79px
+      width: 900px
+      top: 40px
    &__box 
       position: relative
       align-items: flex-start
-      margin-top: 120px
+      margin-top: 96px
       justify-content: space-between
    &__fig1
       position: absolute
@@ -823,10 +915,10 @@ textarea:-moz-placeholder
       z-index: -2
    &__content 
       width: 100%
-      max-width: 440px 
+      max-width: 607px 
       flex: 1 0 auto
       p 
-         margin: 18px 0 35px 
+         margin: 35px 0 53px
          color: #282828
          font-size: 16px
    &__btn 
@@ -855,6 +947,16 @@ textarea:-moz-placeholder
       justify-content: center
       margin-right: 13px
       padding: 1px 0 0 2px
+   &__row 
+      p 
+         color: #989898
+         font-size: 16px
+         position: relative
+         top: 1px
+         margin: 0
+         span 
+            font-weight: 700
+            color: $red
 .how 
    padding: 104px 0 60px
    h2 
@@ -933,7 +1035,7 @@ textarea:-moz-placeholder
    &__socials 
       align-items: center
       a 
-         margin-right: 15px
+         margin-right: 8px
          &:last-child
             margin-right: 0
          &:hover 
@@ -1209,7 +1311,7 @@ textarea:-moz-placeholder
    .sub
       max-width: 400px
 .map 
-   padding: 59px 0 0
+   padding: 20px 0 0
    position: relative
    &__block 
       display: flex
@@ -1231,6 +1333,7 @@ textarea:-moz-placeholder
       height: 663px
       position: relative
       z-index: 2
+      margin-top: 40px
    &__white1 
       position: absolute
       bottom: 0
@@ -1501,9 +1604,49 @@ textarea:-moz-placeholder
       font-size: 15px
       font-weight: 400
       background: transparent
+      margin-bottom: 100px
       text-transform: none
       &:hover 
          border: 1px dashed $red
+   .swiper24 
+      height: 278px
+      width: 126%
+      margin-top: 40px
+      .swiper-slide 
+         position: relative
+         height: 100%
+         &:last-child
+            opacity: 0
+   .swiper-pagination24
+      display: none
+   .swiper-button-prev24
+      transform: rotate(180deg)
+      margin-right: 10px
+   &__image 
+      width: 100%
+      height: 100%
+      position: absolute
+      top: 0
+      left: 0
+      object-fit: cover
+   &__new
+      align-items: center
+      justify-content: space-between
+   &__arrows 
+      align-items: center
+      .pop-arr
+         position: relative
+   &__play 
+      position: absolute
+      top: 50%
+      left: 50%
+      margin-top: -38px
+      margin-left: -38px
+      z-index: 2
+      transition: 0.5s
+      cursor: pointer
+      &:hover 
+         opacity: 0.8
 .about 
    h2 
       font-size: 30px
@@ -1531,7 +1674,7 @@ textarea:-moz-placeholder
    &__text 
       color: #282828
       line-height: 27px
-      margin-bottom: 70px
+      margin-bottom: 60px
    &__row 
       align-items: flex-start
    &__el 
@@ -1562,8 +1705,8 @@ textarea:-moz-placeholder
       height: auto
       border-radius: 20px
       background-color: #f8f8f8
-      padding: 60px 112px 60px 60px
-      margin-top: 100px
+      padding: 40px 112px 53px 60px
+      margin-top: 145px
       h2 
          margin-bottom: 35px
       p 
@@ -1581,8 +1724,13 @@ textarea:-moz-placeholder
       flex-wrap: wrap
    &__item 
       text-align: center
-      width: 28%
+      width: 31%
       margin-bottom: 50px
+      &:nth-child(5)
+         .about__one 
+            white-space: nowrap
+            span 
+               margin-left: 10px
    &__block 
       display: flex
       align-items: center
@@ -1669,7 +1817,7 @@ textarea:-moz-placeholder
    .swiper-button-prev6
       left: -30px
 .photo 
-   padding: 80px 0
+   padding: 80px 0 54px
    h2 
       text-align: center
       font-size: 35px
@@ -1684,7 +1832,7 @@ textarea:-moz-placeholder
          object-fit: cover
          margin-bottom: 20px
 .team
-   padding-bottom: 60px
+   padding: 60px 0
    h2 
       text-align: center
    .pop-arr
@@ -2494,3 +2642,86 @@ textarea:-moz-placeholder
    h1 
       font-size: 35px
       line-height: 46px
+.new 
+   &__block 
+      transition: 0.5s
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 45px
+      height: 45px
+      border: 1px solid #e5e5e5
+      transition: 0.5s
+      margin-right: 16px
+      border-radius: 50%
+      img 
+         margin-right: 0
+.text__up 
+   opacity: 0
+.text__up.is-visible 
+   opacity: 1
+.text__up 
+   position: fixed
+   bottom: 42px
+   right: 120px
+   display: flex
+   z-index: 5
+   align-self: center
+   justify-content: center
+   width: 47px
+   height: 41px
+   transition: 0.5s
+   background: #F0F2F1
+   img 
+      max-width: 12px
+   &:hover 
+      background: $red
+.about__firms_main
+   margin: 27px 0 30px
+   h2 
+      text-align: left
+      margin-left: 226px
+.why .pop-arr
+   opacity: 0
+.photo_main
+   h2 
+      text-align: left
+   .swiper62
+      margin-top: 89px
+      position: relative
+      height: 364px
+      .swiper-slide
+         height: 100%
+         overflow: hidden
+         img
+            transition: 0.5s
+            width: 100%
+            height: 100%
+            object-fit: cover
+         &:hover 
+            img 
+               transform: scale(1.2)
+   .container
+      position: relative
+   .pop-arr 
+      position: absolute
+      opacity: 1
+      top: 44%
+      width: 44px
+      height: 44px
+      box-shadow: 0 18px 40px rgba(108, 108, 108, 0.13)
+      background-color: #ffffff
+      border: none
+   .swiper-button-prev62
+      left: 16% 
+   .swiper-button-next62
+      right: 16%
+   .swiper-pagination62
+      display: none
+      .swiper-pagination-bullet
+         width: 6px
+         height: 6px
+         background-color: #c7c7c7
+         border-radius: 50%
+      .swiper-pagination-bullet-active
+         background: #fa442d !important
