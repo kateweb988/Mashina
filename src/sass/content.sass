@@ -18,7 +18,7 @@ input:-ms-input-placeholder
    color: #575757 !important
 input:-moz-placeholder 
    color: #575757 !important
-.popup__bg, .popup__bg2
+.popup__bg, .popup__bg2, .popup__bg3
    position: fixed
    top: 0
    left: 0
@@ -30,12 +30,12 @@ input:-moz-placeholder
    transition: 0.5s all
    overflow-y: auto
    overflow-x: hidden
-.popup__bg.active, .popup__bg2.active
+.popup__bg.active, .popup__bg2.active,  .popup__bg3.active
     opacity: 1
     pointer-events: all
     transition: 0.5s all
     z-index: 22
-.popup, .popup2
+.popup, .popup2, .popup3
    position: absolute
    top: 49%
    left: 50%
@@ -46,7 +46,7 @@ input:-moz-placeholder
    padding: 50px
    width: 473px
    background-color: #ffffff
-.popup, .popup2
+.popup, .popup2, .popup3
    &__text 
       text-align: center
       color: #7d7d7d
@@ -106,13 +106,30 @@ input:-moz-placeholder
          &:focus 
             border: none  !important
             border-bottom: 1px solid $red !important
-.popup2
+.g 
+   margin: 0 auto 40px
+   display: block
+.txt 
+   text-align: center
+   margin: 20px auto 10px
+.popup2, .popup3
    .tel 
       margin-bottom: 10px
-.popup.active, .popup2.active
+   .nav__socials 
+      justify-content: center
+      margin-bottom: 30px
+.popup3 
+   .popup__btn
+      width: 170px
+      height: 42px
+      font-size: 13px
+      margin: 0 auto 20px
+   input 
+      margin-bottom: 40px
+.popup.active, .popup2.active,.popup3.active
    transform: translate(-50%, -46%) scale(1)
    transition: 0.5s all
-.close-popup, .close-popup2
+.close-popup, .close-popup2, .close-popup3
    position: absolute
    top: 20px
    right: 20px
@@ -170,7 +187,7 @@ input:-moz-placeholder
    font-size: 14px
    line-height: 100%
    color: #FFFFFF
-.swiper-pagination2, .swiper-pagination4, .swiper-pagination55, .swiper-pagination3
+.swiper-pagination2, .swiper-pagination4, .swiper-pagination55, .swiper-pagination3, .swiper-pagination63
    display: flex
    justify-content: center
    bottom: 19px
@@ -621,6 +638,8 @@ textarea:-moz-placeholder
          color: $red
 .pop
    padding: 20px 0 90px
+   h2 
+      text-align: center
    .container
       position: relative
    &__pic 
@@ -684,7 +703,6 @@ textarea:-moz-placeholder
          color: white
    .swiper-pagination2
       display: none
-
    &-arr 
       position: absolute
       top: 57%
@@ -772,7 +790,8 @@ textarea:-moz-placeholder
       width: 81px
       height: 35px
       border-radius: 10px
-      border: 2px solid rgba(225, 225, 225, 0.65)
+      // border: 2px solid rgba(225, 225, 225, 0.65)
+      border: 2px solid transparent
       background-color: #ffffff
       &:first-child
          margin-right: 12px
@@ -804,20 +823,21 @@ textarea:-moz-placeholder
       justify-content: center
       width: 45px
       height: 45px
-      border: 1px solid #e5e5e5
+      border: 5px solid #e1e1e1
       transition: 0.5s
       border-radius: 50%
       margin-right: 8px
       &:first-child
-         padding-left: 2px
+         padding-left: 0px
+         // display: none
       &:last-child
          margin-right: 0
       &:nth-child(2)
          padding-right: 2px
       &:hover 
-         border: 1px solid $red
+         background: #e1e1e1
       img 
-         width: 20px
+         width: 15px
    &__info 
       align-items: center
       margin-left: 54px
@@ -852,26 +872,49 @@ textarea:-moz-placeholder
       max-width: 519px
       margin-left: 0px
       li 
+         transition: 0.5s
+         display: flex
+         align-items: center
+         justify-content: center
+         width: 121px
+         border-radius: 21px
+         background: transparent
+         height: 44px
+         margin-right: -25px
          a 
-            color: #484848
+            color: #484848 !important
             font-size: 16px
+            display: flex
+            align-items: center
+            justify-content: center
+            height: 100%
+            width: 100%
+         &:hover 
+            background-color: #f5f5f5
+            a 
+               color: #000
          &:first-child
             display: flex
             align-items: center
             justify-content: center
             width: 121px
-            background-color: #f5f5f5
             border-radius: 21px
+            background: transparent
             height: 44px
             margin-right: -25px
             img 
                margin-left: 15px
+               display: none
             a 
                display: flex
                align-items: center
                justify-content: center
                height: 100%
                width: 100%
+            &:hover 
+               background-color: #f5f5f5
+               a 
+                  color: #000
          &:hover 
             a 
                color: $red
@@ -903,11 +946,13 @@ textarea:-moz-placeholder
       left: 0
       top: 86px
       z-index: -1
+      opacity: 0
    &__fig2 
       position: absolute
       right: 30px
       top: 24%
       z-index: -1
+      opacity: 0
    &__fig3 
       position: absolute
       right: -176px
@@ -972,21 +1017,28 @@ textarea:-moz-placeholder
          display: block
          background: url(/img/next.png) no-repeat
          position: absolute
-         top: 69px
+         top: 93px
          right: -110px
          width: 129px
          height: 6px
+      &:last-child
+         &:after 
+            display: none
    &__box 
       justify-content: space-between
       margin-top: 80px
    &__top 
-      align-items: flex-start
+      align-items: center 
+      text-align: center
       justify-content: center
       position: relative
-      left: -11px
+      flex-direction: column
+      left: 0px
       p 
          color: #707070
          font-size: 12px
+         position: relative
+         top: -10px
    &__name 
       font-weight: 700
       font-size: 17px
@@ -1016,7 +1068,7 @@ textarea:-moz-placeholder
       margin-bottom: 43px
    &__item 
       align-items: flex-start
-      margin-bottom: 41px
+      margin-bottom: 30px
       &:last-child
          margin-bottom: 0
    &__content 
@@ -1027,7 +1079,7 @@ textarea:-moz-placeholder
    &__tel 
       color: #2e3032
       font-size: 22px
-      margin: 15px 0 20px
+      margin: 15px 0 0px
       font-weight: 700
       display: block
       &:hover 
@@ -1036,6 +1088,8 @@ textarea:-moz-placeholder
       align-items: center
       a 
          margin-right: 8px
+         &:first-child
+            display: flex
          &:last-child
             margin-right: 0
          &:hover 
@@ -1135,14 +1189,48 @@ textarea:-moz-placeholder
       width: 178px
       height: 42px
       border-radius: 21px
-      border: 1px solid #2e3032
-      background-color: #f9f9f9
       font-size: 15px
       font-weight: 400
       text-transform: none
       margin-top: 22px
+      color: #2e3032
+      background: white
+      border: 1px solid #2e3032
+      &:hover 
+         color: white 
+         background: #2e3032
+   &__link 
+      align-items: center
+      margin-bottom: 10px
+      a 
+         color: #2e3032
+         font-size: 17px
+         font-weight: 400
+         margin-left: 14px
+      &_2 
+         margin-bottom: 30px
+      &:hover 
+         a 
+            color: $red
+.ti 
+   justify-content: space-between
+   align-items: center
+   &__flex 
+      a 
+         &:hover 
+            color: white 
+            background: #2e3032 
+         &:first-child
+            margin-right: 20px
+.contacts__rec
+   color: #2e3032
+   background: white
+   border: 1px solid #2e3032
+   &:hover 
+      color: white 
+      background: #2e3032
 .footer 
-   background-color: #2e3032
+   background-color: #030404
    padding: 68px 0 29px
    &__socials
       margin-top: 39px
@@ -1222,6 +1310,9 @@ textarea:-moz-placeholder
       margin-left: auto
       position: relative
       top: -8px
+      &:hover 
+         color: white 
+         background: $red
    &__bottom 
       align-items: center
       justify-content: space-between
@@ -1264,19 +1355,29 @@ textarea:-moz-placeholder
    &__item 
       align-items: flex-start
       margin-bottom: 100px
+      width: 470px
+      text-align: justify
       img 
          margin-left: 30px
       &:last-child
          margin-bottom: 0
+      br 
+         display: none
    &__left 
-      text-align: right
+      // text-align: right
       .why__item
+         &:nth-child(1)
+            position: relative
+            left: 42px
          &:nth-child(2)
             position: relative
-            left: 22px
+            left: -35px
          &:nth-child(3)
             position: relative
-            left: -27px
+            left: 30px
+   .why__item_last
+      .why__text
+         max-width: 342px
    &__name 
       color: #393939
       font-size: 18px
@@ -1285,9 +1386,10 @@ textarea:-moz-placeholder
       line-height: 100%
    &__text 
       color: #505050
+      width: 100%
+      max-width: 323px
    &__right 
       .why__item 
-         text-align: left
          img 
             order: 1
             margin-left: 0
@@ -1297,7 +1399,7 @@ textarea:-moz-placeholder
             top: -10px
          &:nth-child(2)
             position: relative
-            left: 87px
+            left: 77px
             top: 15px
          &:nth-child(3)
             left: -5px
@@ -1366,6 +1468,8 @@ textarea:-moz-placeholder
    display: none
 .news 
    padding-bottom: 100px
+   h1 
+      text-align: center
    &__item 
       align-items: flex-start
       justify-content: space-between
@@ -1423,6 +1527,9 @@ textarea:-moz-placeholder
       font-size: 13px
       border-radius: 24px
       height: 48px
+      &:hover 
+         background: #393939
+         color: white
    &__nav 
       margin-top: 45px
       justify-content: center
@@ -1492,8 +1599,8 @@ textarea:-moz-placeholder
       align-items: flex-start
    &__content 
       width: 100%
-      margin-right: 20px
-      max-width: 756px
+      margin-right: 0px
+      max-width: 100%
    &__text 
       margin-bottom: 25px
       color: #0f0f0f
@@ -1529,6 +1636,12 @@ textarea:-moz-placeholder
       align-items: center
       h1 
          margin-bottom: 50px
+   &__pic 
+      object-fit: cover
+      height: 634px
+      width: 52%
+      position: relative
+      top: 62px
 .rev 
    &__top 
       align-items: center
@@ -1607,7 +1720,9 @@ textarea:-moz-placeholder
       margin-bottom: 100px
       text-transform: none
       &:hover 
-         border: 1px dashed $red
+         background: #393939
+         color: white
+         border: 1px dashed #393939
    .swiper24 
       height: 278px
       width: 126%
@@ -1636,6 +1751,13 @@ textarea:-moz-placeholder
       align-items: center
       .pop-arr
          position: relative
+         img 
+            -webkit-touch-callout: none
+            -webkit-user-select: none
+            -khtml-user-select: none
+            -moz-user-select: none
+            -ms-user-select: none
+            user-select: none    
    &__play 
       position: absolute
       top: 50%
@@ -1649,8 +1771,10 @@ textarea:-moz-placeholder
          opacity: 0.8
 .about 
    h2 
-      font-size: 30px
+      font-size: 35px
       line-height: 40px
+      text-align: center
+      margin-top: 60px
    &__top
       margin-top: 60px
       align-items: center
@@ -1791,7 +1915,7 @@ textarea:-moz-placeholder
       display: block
       width: 100%
       height: 100%
-   .swiper-pagination6 
+   .swiper-pagination6, .swiper-pagination63
       position: relative
       display: flex 
       justify-content: center
@@ -1933,6 +2057,9 @@ textarea:-moz-placeholder
       font-style: normal
       letter-spacing: normal
       line-height: 35px
+   &__content 
+      align-items: flex-start
+      justify-content: space-between
    &__btn 
       position: relative
       z-index: 1
@@ -1940,7 +2067,8 @@ textarea:-moz-placeholder
       height: 44px
       font-weight: 500
       font-weight: 500
-      margin-left: 50px
+      padding-left: 14px
+      margin-left: 20px
       .svg
          margin-left: 2px
          width: 23px
@@ -2039,11 +2167,18 @@ textarea:-moz-placeholder
          line-height: 25px
          font-size: 15px
 .contacts 
+   h1 
+      text-align: center
    #map 
       height: 510px
-      width: 65.72%
+      width: 100% !important
       border-radius: 15px
       overflow: hidden
+   .ti__new 
+      width: 65.72%
+      .ti__flex
+         margin-top: 25px
+         justify-content: center
    &__box 
       margin-top: 50px
       align-items: flex-start
@@ -2060,8 +2195,6 @@ textarea:-moz-placeholder
       height: 42px
       font-size: 14px
       border-radius: 21px
-      border: 1px solid #2e3032
-      background-color: #f9f9f9
       font-size: 14px
       font-weight: 400
       text-transform: none
@@ -2404,6 +2537,7 @@ textarea:-moz-placeholder
    &__left 
       width: 100%
       max-width: 604px
+      margin-top: 81px
       position: relative
    .mySwiper2
       width: 100%
@@ -2412,7 +2546,7 @@ textarea:-moz-placeholder
       .swiper-slide
          width: 100%
          background-color: #f5f5f5
-         height: 528px
+         height: 393px
          border-radius: 20px
          overflow: hidden
          display: flex
@@ -2645,7 +2779,7 @@ textarea:-moz-placeholder
 .new 
    &__block 
       transition: 0.5s
-      display: flex
+      display: none
       align-items: center
       justify-content: center
       width: 45px
@@ -2679,13 +2813,38 @@ textarea:-moz-placeholder
 .about__firms_main
    margin: 27px 0 30px
    h2 
-      text-align: left
-      margin-left: 226px
+      text-align: center
+      margin-left: 0px
+   .swiper63 
+      overflow: hidden
+      position: relative
+      margin: 70px 0 0
+      .about__box
+         width: 100%
+   .pop-arr
+      top: 38%
+      left: 10px
+      z-index: 5
+      width: 30px
+      height: 30px
+      max-width: 30px
+      box-shadow: 0 18px 40px rgba(108, 108, 108, 0.13)
+      background-color: #ffffff
+      border: none
+      opacity: 1
+      img 
+         width: 7px
+   .swiper-button-next63
+      right: 10px
+      left: inherit
+      width: 30px
+      height: 30px
+      max-width: 30px
 .why .pop-arr
    opacity: 0
 .photo_main
    h2 
-      text-align: left
+      text-align: center
    .swiper62
       margin-top: 89px
       position: relative
@@ -2713,9 +2872,9 @@ textarea:-moz-placeholder
       background-color: #ffffff
       border: none
    .swiper-button-prev62
-      left: 16% 
+      left: 7% 
    .swiper-button-next62
-      right: 16%
+      right: 7%
    .swiper-pagination62
       display: none
       .swiper-pagination-bullet
@@ -2725,3 +2884,54 @@ textarea:-moz-placeholder
          border-radius: 50%
       .swiper-pagination-bullet-active
          background: #fa442d !important
+.rev-main 
+   padding: 80px 0 60px
+   h2 
+      text-align: center
+      width: 100%
+.rev h2 
+   text-align: center
+   width: 100%
+.swiper-pagination63
+   position: relative
+   display: none
+   justify-content: center
+   margin-top: 60px
+   .swiper-pagination-bullet
+      width: 6px
+      height: 6px
+      background-color: #c7c7c7
+      border-radius: 50%
+   .swiper-pagination-bullet-active
+      background: $red !important
+.swiper1 
+   overflow: hidden
+.swiper-button-next1, .swiper-button-prev1
+   display: flex
+.swiper-pagination1
+   position: relative
+   justify-content: center
+   margin-top: 20px
+   .swiper-pagination-bullet
+      width: 6px
+      height: 6px
+      background-color: #c7c7c7
+      border-radius: 50%
+   .swiper-pagination-bullet-active
+      background: $red !important
+#delivery
+   h1 
+      text-align: left
+.header__wrap 
+   .container
+      position: relative
+      .swiper-button-prev1
+         left: -50px
+         transform: rotate(180deg)
+      .swiper-button-next1
+         left: inherit 
+         right: -50px
+      .pop-arr
+         top: 47%
+.nm 
+   display: block

@@ -1530,7 +1530,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //popup1
   let popupBg = document.querySelector('.popup__bg');
   let popup = document.querySelector('.popup');
-  let openPopupButtons = document.querySelectorAll('.pop__buy');
+  let openPopupButtons = document.querySelectorAll('.pop__buy, .card__btn, .char__btn');
   let closePopupButton = document.querySelector('.close-popup');
 
   openPopupButtons.forEach((button) => {
@@ -1594,8 +1594,42 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  //popup3
+  let popupBg3 = document.querySelector('.popup__bg3');
+  let popup3 = document.querySelector('.popup3');
+  let openPopupButtons3 = document.querySelectorAll('.pop__btn');
+  let closePopupButton3 = document.querySelector('.close-popup3');
+
+  openPopupButtons3.forEach((button) => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+      popupBg3.classList.add('active');
+      popup3.classList.add('active');
+    })
+  });
+
+  closePopupButton3.addEventListener('click', () => {
+    popupBg3.classList.remove('active');
+    popup3.classList.remove('active');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (e.target === popupBg3) {
+      popupBg3.classList.remove('active');
+      popup3.classList.remove('active');
+    }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      //ваша функция закрытия окна
+      popupBg3.classList.remove('active');
+      popup3.classList.remove('active');
+    }
+  });
+});
 document.addEventListener('DOMContentLoaded', function () {
-  const swiper = new Swiper('.swiper1', {
+  const swiper1 = new Swiper('.swiper1', {
     slidesPerView: 1,
     pagination: {
       el: ".swiper-pagination1",
@@ -1827,6 +1861,37 @@ document.addEventListener('DOMContentLoaded', function () {
       1200: {
         spaceBetween: 21,
         slidesPerView: 4
+      }
+    }
+  });
+  const swiper63 = new Swiper('.swiper63', {
+    slidesPerView: 8,
+    spaceBetween: 21,
+    pagination: {
+      el: ".swiper-pagination63",
+    },
+    navigation: {
+      nextEl: '.swiper-button-next63',
+      prevEl: '.swiper-button-prev63',
+    },
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        spaceBetween: 20,
+        loop: true,
+        slidesPerView: 2
+      },
+      767: {
+        spaceBetween: 20,
+        slidesPerView: 4
+      },
+      992: {
+        spaceBetween: 20,
+        slidesPerView: 5
+      },
+      1200: {
+        spaceBetween: 21,
+        slidesPerView: 8
       }
     }
   });

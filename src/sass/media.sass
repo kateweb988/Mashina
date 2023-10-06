@@ -85,9 +85,21 @@
       display: none
    .faq__box
       max-width: 100%
+   .header__wrap 
+      .container
+         .pop-arr
+            display: none
+   .header__pic
+      width: 700px
 @media screen and (max-width: 1199px)
+   .nav__list li
+      height: auto
+      a
+         justify-content: flex-start
    .cat .swiper9
       background: transparent
+   .why__item
+      width: 100%
    .menu-btn 
       width: 23px
       height: 28px
@@ -143,6 +155,14 @@
          margin: 80px 0px 80px 25px
          li 
             margin-bottom: 15px
+            &:first-child
+               padding: 0
+               left: 0
+               align-items: flex-start
+               width: auto
+               justify-content: flex-start
+               a 
+                  justify-content: flex-start
       .nav__text
          margin-bottom: 15px
    .menu.active
@@ -264,6 +284,8 @@
       flex-direction: column-reverse
    .delivery__pic
       width: 100%
+      height: auto
+      top: 0
       margin-bottom: 40px
    .delivery .back__content
       margin-right: 0
@@ -351,6 +373,11 @@
       width: 100% !important
    .map #map
       max-width: 100%
+   .swiper-pagination1
+      justify-content: center
+      display: flex
+   .header__pic
+      left: 0
 @media ( max-width: 991px )
    input, textarea, select
       -webkit-appearance: none
@@ -433,6 +460,10 @@
       width: 1000px
    .char__pic
       height: auto
+   .ti__new 
+      width: 100% !important
+      #map 
+         max-width: 100%
 @media screen and (max-width: 767px)
    .pop__pic
       width: 80%
@@ -510,6 +541,7 @@
    .nav__link
       width: 32px
       height: 32px
+      border: 4px solid #e1e1e1
       img 
          width: 50%
    .nav__logo 
@@ -842,9 +874,11 @@
    .new__block
       width: 32px
       height: 32px
+      display: flex
+      border: 4px solid #e1e1e1
       margin-right: 0
       img 
-         width: 12px
+         width: 10px
    .nav__tel
       margin-left: auto
       margin-right: 8px
@@ -855,6 +889,7 @@
       width: 125px
       height: 32px
       font-size: 11px
+      margin-left: 11px
    .menu-btn
       top: 3px
    .header__row
@@ -891,7 +926,7 @@
    .menu .nav__list
       margin-top: 40px 
       margin-bottom: 40px
-   .popup, .popup2
+   .popup, .popup2, .popup3
       width: 90%
       padding: 60px 20px
    .popup__form input, .popup2__form input
@@ -905,10 +940,43 @@
       margin-left: -30px
    .rev__load
       margin-bottom: 80px
-@media screen and (max-width: 340px)
+   .card__left
+      margin-top: 0
+   .act__content
+      flex-direction: column
+   .act__btn
+      margin-left: 0
+      margin-top: 20px
+   .pop h2
+      text-align: left
+   .about__firms_main .swiper63
+      margin-top: 40px
+   .about__firms_main .pop-arr
+      display: none
+   .swiper-pagination63
+      display: flex
+      margin-top: 25px
+   .swiper-pagination1
+      margin-top: 40px
+   .why .pop-arr
+      opacity: 1
+   .about h2
+      margin-top: 30px
+   .ti 
+      flex-direction: column
+      &__flex 
+         margin-top: 25px
+@media screen and (max-width: 355px)
    .nav__logo
       width: 96px
    .card__choose .calc__item
       margin-right: 10px
    .why .pop-arr
       opacity: 1
+   .header__pic 
+      margin-top: 40px
+      width: 350px
+      position: relative
+      left: 50%
+      margin-left: -182px
+      top: 0
