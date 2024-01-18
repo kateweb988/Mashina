@@ -121,6 +121,8 @@
             display: none
    .header__pic
       width: 700px
+   .nav__list
+      max-width: 435px
 @media screen and (max-width: 1199px)
    .nav__list li
       height: auto
@@ -408,6 +410,19 @@
       display: flex
    .header__pic
       left: 0
+   .about__firms_main .pop-arr
+      top: 61%
+   .about__item:nth-child(5) .about__one
+      white-space: inherit
+   .nav__tel p
+      display: none
+   .menu .nav__text 
+      display: none
+   .about__top
+      flex-direction: column-reverse
+   .about__pic 
+      width: 100%
+      margin-bottom: 40px
 @media ( max-width: 991px )
    input, textarea, select
       -webkit-appearance: none
@@ -933,15 +948,14 @@
       a 
          width: 43%
    .photo_main .swiper62
-      margin: 40px 0 40px 20px
+      margin: 40px auto 40px
       height: 300px
       width: 90%
    .photo_main .swiper62 .swiper-slide
       width: 100%
    .photo_main .pop-arr
-      width: 25px
-      top: 48%
-      height: 25px
+      top: 55%
+      opacity: 1
       img
          width: 7px
    .photo_main .swiper-button-next62
@@ -997,10 +1011,8 @@
    .about__firms_main .swiper63
       margin-top: 40px
    .about__firms_main .pop-arr
-      width: 25px
       top: 26%
-      opacity: 0.5
-      height: 25px
+      opacity: 0
       img
          width: 7px
       &:hover 
@@ -1050,9 +1062,13 @@
          background: transparent
          a 
             color: $red !important
-@media screen and (max-width: 355px)
-   .nav__logo
-      width: 96px
+   .nav__tel:hover 
+      background: #e1e1e1
+   .nav__new
+      .nav__link
+         &:nth-child(4), &:nth-child(5), &:nth-child(6)
+            display: none
+@media screen and (max-width: 359px)
    .card__choose .calc__item
       margin-right: 10px
    .why .pop-arr
@@ -1064,6 +1080,14 @@
       left: 50%
       margin-left: -182px
       top: 0
+   .cat__area_2
+      flex-direction: column
+   .cat .span
+      margin: 10px 0
+   .nav__call
+      font-size: 8px
+   .popup__flex_2
+      max-width: 90%
 @media screen and (max-width: 420px) and (min-height: 660px) and (max-height: 790px)
    .main
       .header__box

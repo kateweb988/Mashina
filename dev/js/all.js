@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     $.arcticmodal('close');
 
   });
-  $('.nav__call, .footer__btn').click(function (e) {
+  $('.nav__call, .footer__btn, .cat__fil').click(function (e) {
     e.preventDefault();
     $('#popup-call').arcticmodal({
     });
@@ -1883,7 +1883,7 @@ document.addEventListener('DOMContentLoaded', function () {
     breakpoints: {
       // when window width is >= 320px
       320: {
-        spaceBetween: 20,
+        spaceBetween: 0,
         loop: true,
         slidesPerView: 1
       },
@@ -1902,7 +1902,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
   const swiper63 = new Swiper('.swiper63', {
-    slidesPerView: 8,
+    slidesPerView: 6,
     spaceBetween: 21,
     pagination: {
       el: ".swiper-pagination63",
@@ -1928,7 +1928,7 @@ document.addEventListener('DOMContentLoaded', function () {
       },
       1200: {
         spaceBetween: 21,
-        slidesPerView: 8
+        slidesPerView: 6
       }
     }
   });
